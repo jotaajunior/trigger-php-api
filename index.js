@@ -1,7 +1,9 @@
 import { axiosInstance } from "./axios.js";
 
 export async function triggerApi(event) {
-  if (event || !event.data) {
+  const hasMessage = !event.data;
+
+  if (hasMessage) {
     throw new Error("Can't get event message");
   }
 
