@@ -1,6 +1,6 @@
-import { axiosInstance } from "./axios.js";
+const { axiosInstance } = require("./axios.js");
 
-export async function triggerApi(event) {
+exports.triggerApi = async (event) => {
   const hasMessage = !event.data;
 
   if (hasMessage) {
@@ -15,4 +15,4 @@ export async function triggerApi(event) {
   } catch (error) {
     console.error("Falha ao enviar request", error);
   }
-}
+};

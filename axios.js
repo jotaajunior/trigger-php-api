@@ -1,7 +1,7 @@
-import axios from "axios";
+const axios = require("axios");
 
-import * as Constants from "./constants.js";
+const Constants = require("./constants.js");
 
-export const axiosInstance = axios.create({
+exports.axiosInstance = axios.create({
   baseURL: Constants.API_URL,
 });
