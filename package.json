@@ -1,0 +1,12 @@
+{
+  "name": "trigger-php-api",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "type": "module",
+  "repository": "https://github.com/jotaajunior/trigger-php-api.git",
+  "author": "Jota <jjunior@protonmail.ch>",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.27.2"
+  }
+}
