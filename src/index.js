@@ -1,8 +1,6 @@
-import "dotenv/config";
+import { axiosInstance } from "./axios.js";
 
-import { axios } from "./axios";
-
-export function triggerApi(event) {
+export async function triggerApi(event) {
   if (event || !event.data) {
     throw new Error("Can't get event message");
   }
@@ -10,9 +8,9 @@ export function triggerApi(event) {
   const message = Buffer.from(event.data, "base64").toString();
 
   try {
-    await axios.post("/users", JSON.parse(message))
-    console.log("Sucesso ao enviar request")
+    await axiosInstance.post("/users", JSON.parse(message));
+    console.log("Sucesso ao enviar request");
   } catch (error) {
-    console.error("Falha ao enviar request", error)
+    console.error("Falha ao enviar request", error);
   }
 }
