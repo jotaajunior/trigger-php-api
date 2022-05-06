@@ -1,9 +1,13 @@
 import { axiosInstance } from "./axios";
 
-export async function triggerApi(event: any) {
-  const hasMessage = !event.data;
+type Event = {
+  data: string;
+};
 
-  if (hasMessage) {
+export async function triggerApi(event: Event) {
+  const hasInvalidMessage = !event.data;
+
+  if (hasInvalidMessage) {
     throw new Error("Can't get event message");
   }
 
@@ -13,6 +17,6 @@ export async function triggerApi(event: any) {
     await axiosInstance.post("/users", JSON.parse(message));
     console.log("Sucesso ao enviar request");
   } catch (error) {
-    console.error("Falha ao enviar request", error);
+    console.error("Falha ao enviar request");
   }
 }
