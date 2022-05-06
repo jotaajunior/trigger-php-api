@@ -1,3 +1,5 @@
+import "dotenv/config";
+
 import { axiosInstance } from "./axios";
 
 type Event = {

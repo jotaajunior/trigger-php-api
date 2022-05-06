@@ -5,7 +5,8 @@
     "gcp-build": "tsc"
   },
   "dependencies": {
-    "axios": "^0.27.2"
+    "axios": "^0.27.2",
+    "dotenv": "^16.0.0"
   },
   "devDependencies": {
     "@types/axios": "^0.14.0",
